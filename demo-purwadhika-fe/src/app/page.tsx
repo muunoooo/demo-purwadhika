@@ -42,7 +42,6 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen flex flex-col md:flex-row">
-      {/* Sidebar Kiri */}
       <aside className="w-full md:w-1/3 bg-teal-600 text-white flex flex-col items-center justify-center p-6">
         <div className="text-5xl mb-4">📓</div>
         <h1 className="text-3xl font-bold text-center">Mini Guestbook</h1>
@@ -51,9 +50,7 @@ export default function HomePage() {
         </p>
       </aside>
 
-      {/* Konten Kanan */}
       <section className="w-full md:w-2/3 p-6">
-        {/* Form Input */}
         <form onSubmit={handleSubmit} className="mb-6 space-y-4">
           <input
             value={name}
@@ -77,7 +74,6 @@ export default function HomePage() {
           </button>
         </form>
 
-        {/* Daftar Pesan */}
         <div className="space-y-4">
           {messages.map((msg) => (
             <div
