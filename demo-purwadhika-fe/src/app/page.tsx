@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 interface Message {
   id: number;
@@ -23,7 +24,6 @@ export default function HomePage() {
       console.error("Gagal mengambil pesan:", err);
     }
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -31,8 +31,10 @@ export default function HomePage() {
       setName("");
       setMessage("");
       fetchMessages();
+      toast.success("Pesan berhasil dikirim!");
     } catch (err) {
       console.error("Gagal mengirim pesan:", err);
+      toast.error("Gagal mengirim pesan 😥");
     }
   };
 
